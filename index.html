@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Flask Application</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Welcome to My Flask Application</h1>
+
+        <p>A simple Python Flask web application.</p>
+
+        <form method="POST" action="/">
+            <label for="username">Enter Your Name:</label>
+
+            <input
+                type="text"
+                id="username"
+                name="username"
+                placeholder="Enter your name"
+                required
+            >
+
+            <button type="submit">Submit</button>
+        </form>
+
+        {% if username %}
+            <div class="result">
+                <h2>Hello, {{ username }}!</h2>
+                <p>Welcome to my Flask application.</p>
+            </div>
+        {% endif %}
+
+        <footer>
+            <p>Powered by Python Flask</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
